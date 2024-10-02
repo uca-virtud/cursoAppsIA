@@ -1,3 +1,4 @@
+@import "theme-editor.css";
 @import url('./main-layout.css');
 @import url('./views/chat-view.css');    html {
       --lumo-shade-5pct: rgba(33, 33, 33, 0.05);

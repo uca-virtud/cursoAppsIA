@@ -11,9 +11,6 @@ import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-import es.uca.views.chat.ChatView;
-import es.uca.views.form.SentimentAnalyzerView;
-import es.uca.views.home.HomeView;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
 /**
@@ -52,9 +49,11 @@ public class MainLayout extends AppLayout {
     private SideNav createNavigation() {
         SideNav nav = new SideNav();
 
-        nav.addItem(new SideNavItem("Home", HomeView.class, LineAwesomeIcon.FILE.create()));
-        nav.addItem(new SideNavItem("Chat", ChatView.class, LineAwesomeIcon.COMMENTS.create()));
-        nav.addItem(new SideNavItem("Analizador de sentimientos", SentimentAnalyzerView.class, LineAwesomeIcon.THUMBS_UP.create()));
+        nav.addItem(new SideNavItem("Home", "", LineAwesomeIcon.FILE.create()));
+        nav.addItem(new SideNavItem("Generador", "generation/1", LineAwesomeIcon.COMMENTS.create()));
+
+        //  nav.addItem(new SideNavItem("Chat", ChatView.class, LineAwesomeIcon.COMMENTS.create()));
+        //nav.addItem(new SideNavItem("Analizador de sentimientos", SentimentAnalyzerView.class, LineAwesomeIcon.THUMBS_UP.create()));
 
         return nav;
     }
