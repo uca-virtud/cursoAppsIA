@@ -13,7 +13,6 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.page.Page;
-import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.Tabs.Orientation;
 import com.vaadin.flow.router.PageTitle;
@@ -35,53 +34,6 @@ import java.util.UUID;
 @PageTitle("Chat")
 @Route(value = "chat", layout = MainLayout.class)
 public class ChatView extends HorizontalLayout {
-
-    public static class ChatTab extends Tab {
-        private final ChatInfo chatInfo;
-
-        public ChatTab(ChatInfo chatInfo) {
-            this.chatInfo = chatInfo;
-        }
-
-        public ChatInfo getChatInfo() {
-            return chatInfo;
-        }
-    }
-
-    public static class ChatInfo {
-        private String name;
-        private int unread;
-        private Span unreadBadge;
-
-        private ChatInfo(String name, int unread) {
-            this.name = name;
-            this.unread = unread;
-        }
-
-        public void resetUnread() {
-            unread = 0;
-            updateBadge();
-        }
-
-        public void incrementUnread() {
-            unread++;
-            updateBadge();
-        }
-
-        private void updateBadge() {
-            unreadBadge.setText(unread + "");
-            unreadBadge.setVisible(unread != 0);
-        }
-
-        public void setUnreadBadge(Span unreadBadge) {
-            this.unreadBadge = unreadBadge;
-            updateBadge();
-        }
-
-        public String getCollaborationTopic() {
-            return "chat/" + name;
-        }
-    }
 
     private ChatInfo[] chats = new ChatInfo[]{new ChatInfo("general", 0), new ChatInfo("support", 0),
             new ChatInfo("casual", 0)};
@@ -172,7 +124,7 @@ public class ChatView extends HorizontalLayout {
         Span badge = new Span();
         chat.setUnreadBadge(badge);
         badge.getElement().getThemeList().add("badge small contrast");
-        tab.add(new Span("#" + chat.name), badge);
+        tab.add(new Span("#" + chat.getName()), badge);
 
         return tab;
     }

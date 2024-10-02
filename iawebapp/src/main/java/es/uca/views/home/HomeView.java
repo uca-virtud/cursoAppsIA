@@ -20,10 +20,10 @@ public class HomeView extends VerticalLayout {
         img.setWidth("200px");
         add(img);
 
-        H2 header = new H2("This place intentionally left empty");
+        H2 header = new H2("Aplicación web de ejemplo con Spring, Vaadin y LangChain4J");
         header.addClassNames(Margin.Top.XLARGE, Margin.Bottom.MEDIUM);
         add(header);
-        add(new Paragraph("It’s a place where you can grow your own UI 🤗"));
+        add(new Paragraph("Sí, está web está integramente creada con Java 🤗"));
 
         setSizeFull();
         setJustifyContentMode(JustifyContentMode.CENTER);

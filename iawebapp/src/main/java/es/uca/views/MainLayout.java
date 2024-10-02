@@ -12,6 +12,7 @@ import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import es.uca.views.chat.ChatView;
+import es.uca.views.form.SentimentAnalyzerView;
 import es.uca.views.home.HomeView;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
@@ -53,6 +54,7 @@ public class MainLayout extends AppLayout {
 
         nav.addItem(new SideNavItem("Home", HomeView.class, LineAwesomeIcon.FILE.create()));
         nav.addItem(new SideNavItem("Chat", ChatView.class, LineAwesomeIcon.COMMENTS.create()));
+        nav.addItem(new SideNavItem("Analizador de sentimientos", SentimentAnalyzerView.class, LineAwesomeIcon.THUMBS_UP.create()));
 
         return nav;
     }
