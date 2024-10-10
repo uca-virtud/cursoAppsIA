@@ -6,14 +6,15 @@ con IA*.
 
 ### Contenidos del curso
 Durante el curso se trabajan los siguientes módulos:
-
-1. Introducción a la IA
-2. Modelos de lenguaje
-3. Creación de aplicaciones enriquecidas
-4. Retrieval-augmented generation
-5. Agentes
-6. LLMOps
-7. Cierre
+0. [Bienvenida](./slides/0-Creacion-de-aplicaciones-enriquecidas-con-IA.pdf)
+1. [Introducción a la IA](./slides/1-Inteligencia-Artificial.pdf)
+2. [Modelos de lenguaje](./slides/2-Modelos-del-lenguaje.pdf)
+3. [Integrando LLM en aplicaciones](./slides/3-Integrando-LLM-en-Aplicaciones.pdf)
+4. [Prompt Engineering](./slides/4-Prompt-Engineering.pdf)
+5. Retrieval-augmented generation](./slides/
+6. Agentes
+7. LLMOps
+8. Cierre
 
 Y se utilizan las siguientes herramientas:
 1. ollama
@@ -24,23 +25,25 @@ Y se utilizan las siguientes herramientas:
 
 ## Contenido del repositorio
 En este repositorio va a encontrar el código fuente de un proyecto web, basado en tecnologías Java.
-El proyecto se ha creado con Spring Boot, Vaadin y LangChain4J.
+El proyecto se ha creado utilizando los frameworks Spring Boot, Vaadin y LangChain4J.
 
-Desde esta aplicación web se podrán acceder a los siguientes servicios de IA:
-1. Servicio de chatbot
-2. Servicio de chatbot en streaming
-3. Servicio de análisis de sentimientos
-4. Servicio analizador de prioridades en issues
-5. Servicio extractor de datos de personas
-6. Servicio generador de imágenes
-7. Servicio generador de textos alternativos para imágenes
-8. Servicio de chatbot con RAG naive
-9. Servicio de chatbot con RAG avanzado
-10. Servicio de chatbot con RAG modular
-11. Servicio de chatbot/copiloto
+La aplicación ofrece las siguientes funcionalidades:
+1. Generador de texto
+2. Generador de imágenes
+3. Generador de texto multimodal
+4. Traductor de texto
+5. "Resumidor" de texto
+6. Analizador de sentimientos
+7. Extractor de datos
+8. Chat simple
+9. Chat con memoria
+10. Servicio web del chat
+11. Asistente
 
 
 ## Instrucciones de uso
+
+### Modificar la aplicación
 Puede hacer uso de este proyecto de dos maneras diferentes: 
 - Desde su máquina de desarrollo, haciendo un *git clone* del proyecto y trabajando de forma local con su IDE. 
 - Usando un *codespace* de GitHub. Un codespace es un entorno de desarrollo basado en la nube que se puede usar 
