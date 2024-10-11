@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class TextHandlerService {
 
-    ChatLanguageModel chatLanguageModel;
-    TextHandler textHandler;
+    private ChatLanguageModel chatLanguageModel;
+    private TextHandler textHandler;
 
     public TextHandlerService(ChatLanguageModel chatLanguageModel) {
         this.chatLanguageModel = chatLanguageModel;
@@ -21,8 +21,7 @@ public class TextHandlerService {
     }
 
     public String translate(String userMessage, String language) {
-        // TODO: implementar
-        return "";
+        return textHandler.translate(userMessage, language);
     }
 
 

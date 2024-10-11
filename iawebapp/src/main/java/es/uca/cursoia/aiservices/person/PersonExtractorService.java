@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class PersonExtractorService {
 
-    ChatLanguageModel chatLanguageModel;
-    PersonExtractor personExtractor;
+    private ChatLanguageModel chatLanguageModel;
+    private PersonExtractor personExtractor;
 
     public PersonExtractorService(ChatLanguageModel chatLanguageModel) {
         this.chatLanguageModel = chatLanguageModel;

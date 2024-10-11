@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class SentimentAnalyzerService {
 
-    ChatLanguageModel chatLanguageModel;
-    SentimentAnalyzer sentimentAnalyzer;
+    private ChatLanguageModel chatLanguageModel;
+    private SentimentAnalyzer sentimentAnalyzer;
 
     public SentimentAnalyzerService(ChatLanguageModel chatLanguageModel) {
         this.chatLanguageModel = chatLanguageModel;

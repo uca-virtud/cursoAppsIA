@@ -6,22 +6,17 @@ con IA*.
 
 ### Contenidos del curso
 Durante el curso se trabajan los siguientes módulos:
+
 0. [Bienvenida](./slides/0-Creacion-de-aplicaciones-enriquecidas-con-IA.pdf)
 1. [Introducción a la IA](./slides/1-Inteligencia-Artificial.pdf)
 2. [Modelos de lenguaje](./slides/2-Modelos-del-lenguaje.pdf)
 3. [Integrando LLM en aplicaciones](./slides/3-Integrando-LLM-en-Aplicaciones.pdf)
 4. [Prompt Engineering](./slides/4-Prompt-Engineering.pdf)
-5. Retrieval-augmented generation](./slides/
+5. Retrieval-augmented generation
 6. Agentes
 7. LLMOps
 8. Cierre
 
-Y se utilizan las siguientes herramientas:
-1. ollama
-2. OpenWebUI
-3. LangChain4J
-4. Milvus
-5. Langfuse
 
 ## Contenido del repositorio
 En este repositorio va a encontrar el código fuente de un proyecto web, basado en tecnologías Java.
@@ -30,15 +25,15 @@ El proyecto se ha creado utilizando los frameworks Spring Boot, Vaadin y LangCha
 La aplicación ofrece las siguientes funcionalidades:
 1. Generador de texto
 2. Generador de imágenes
-3. Generador de texto multimodal
+3. Descriptor de imágenes (multimodal)
 4. Traductor de texto
 5. "Resumidor" de texto
 6. Analizador de sentimientos
 7. Extractor de datos
 8. Chat simple
 9. Chat con memoria
-10. Servicio web del chat
-11. Asistente
+10. Asistente
+11. Servicio web del chat
 
 
 ## Instrucciones de uso

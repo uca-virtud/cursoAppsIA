@@ -6,15 +6,13 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import es.uca.cursoia.MainLayout;
 
-@PageTitle("Analizador de sentimientos")
-@Route(value = "texthandler/:serviceId", layout = MainLayout.class)
-public class TextHandlerView extends VerticalLayout implements BeforeEnterObserver {
+@PageTitle("Manejador de textos")
+@Route(value = "aiservices/texthandler", layout = MainLayout.class)
+public class TextHandlerView extends VerticalLayout {
 
     private final TextHandlerService textHandlerService;
 
@@ -36,8 +34,11 @@ public class TextHandlerView extends VerticalLayout implements BeforeEnterObserv
         Button summaryButton = new Button("Resumir");
         summaryButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         horizontalLayout.add(summaryButton);
+
         Button translateButton = new Button("Translate");
+        translateButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_SUCCESS);
         horizontalLayout.add(translateButton);
+
         formLayout.add(horizontalLayout);
 
         TextArea output = new TextArea();
@@ -60,6 +61,7 @@ public class TextHandlerView extends VerticalLayout implements BeforeEnterObserv
             output.setValue(result);
         });
 
+
         // Set the layout
         this.add(formLayout);
         this.setJustifyContentMode(JustifyContentMode.CENTER); // Vertical alignment
@@ -70,9 +72,4 @@ public class TextHandlerView extends VerticalLayout implements BeforeEnterObserv
     }
 
 
-    public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        String serviceId = beforeEnterEvent.getRouteParameters().get("serviceId").get();
-
-
-    }
 }

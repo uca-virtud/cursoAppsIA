@@ -7,15 +7,13 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import es.uca.cursoia.MainLayout;
 
 @PageTitle("Analizador de sentimientos")
-@Route(value = "sentimentanalyzer/:serviceId", layout = MainLayout.class)
-public class SentimentAnalyzerView extends VerticalLayout implements BeforeEnterObserver {
+@Route(value = "aiservices/sentimentanalyzer", layout = MainLayout.class)
+public class SentimentAnalyzerView extends VerticalLayout {
 
     private final SentimentAnalyzerService sentimentAnalyzerService;
 
@@ -37,10 +35,10 @@ public class SentimentAnalyzerView extends VerticalLayout implements BeforeEnter
         formLayout.add(button);
 
         // Add the button click listener
+
         button.addClickListener(e -> {
             String text = input.getValue();
             Sentiment result = sentimentAnalyzerService.analyzeSentimentOf(text);
-
             Notification notification;
 
             switch (result) {
@@ -60,9 +58,8 @@ public class SentimentAnalyzerView extends VerticalLayout implements BeforeEnter
                     notification.setPosition(Notification.Position.MIDDLE);
                     break;
             }
-
-
         });
+        
 
         // Set the layout
         this.add(formLayout);
@@ -74,9 +71,4 @@ public class SentimentAnalyzerView extends VerticalLayout implements BeforeEnter
     }
 
 
-    public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        String serviceId = beforeEnterEvent.getRouteParameters().get("serviceId").get();
-
-
-    }
 }

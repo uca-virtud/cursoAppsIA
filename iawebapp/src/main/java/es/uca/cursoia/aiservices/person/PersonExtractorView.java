@@ -8,15 +8,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import es.uca.cursoia.MainLayout;
 
 @PageTitle("Extractor de datos de personas")
-@Route(value = "personextractor/:serviceId", layout = MainLayout.class)
-public class PersonExtractorView extends VerticalLayout implements BeforeEnterObserver {
+@Route(value = "aiservices/personextractor", layout = MainLayout.class)
+public class PersonExtractorView extends VerticalLayout {
 
     private final PersonExtractorService personExtractorService;
     private FormLayout resultLayout;
@@ -53,13 +51,13 @@ public class PersonExtractorView extends VerticalLayout implements BeforeEnterOb
         Binder<Person> binder = new Binder<>(Person.class);
         binder.bindInstanceFields(this);
 
+
         // Add the button click listener
         button.addClickListener(e -> {
             String text = input.getValue();
             Person result = personExtractorService.extractPersonFrom(text);
             binder.setBean(result);
             resultLayout.setVisible(true);
-
         });
 
 
@@ -92,11 +90,11 @@ public class PersonExtractorView extends VerticalLayout implements BeforeEnterOb
         resultLayout.add(birthDate);
 
         street.setLabel("Dirección");
-        street.setReadOnly(false);
+        street.setReadOnly(true);
         resultLayout.add(street);
 
         city.setLabel("Ciudad");
-        city.setReadOnly(false);
+        city.setReadOnly(true);
         resultLayout.add(city);
 
 
@@ -104,9 +102,4 @@ public class PersonExtractorView extends VerticalLayout implements BeforeEnterOb
     }
 
 
-    public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        String serviceId = beforeEnterEvent.getRouteParameters().get("serviceId").get();
-
-
-    }
 }

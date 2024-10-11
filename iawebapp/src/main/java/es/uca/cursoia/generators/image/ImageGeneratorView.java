@@ -7,15 +7,13 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import es.uca.cursoia.MainLayout;
 
 @PageTitle("Generador de imágenes")
-@Route(value = "imagegenerator/:serviceId", layout = MainLayout.class)
-public class ImageGeneratorView extends VerticalLayout implements BeforeEnterObserver {
+@Route(value = "generators/image", layout = MainLayout.class)
+public class ImageGeneratorView extends VerticalLayout {
 
     private final ImageGeneratorService imageGeneratorService;
 
@@ -36,6 +34,7 @@ public class ImageGeneratorView extends VerticalLayout implements BeforeEnterObs
         button.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         formLayout.add(button);
 
+
         // Add the button click listener
         button.addClickListener(e -> {
             String text = input.getValue();
@@ -44,9 +43,8 @@ public class ImageGeneratorView extends VerticalLayout implements BeforeEnterObs
             Dialog dialog = new Dialog();
             dialog.add(new Image(response.url().toString(), "Imágen generada por el prompt: " + text));
             dialog.open();
-
-
         });
+
 
         // Set the layout
         this.add(formLayout);
@@ -58,9 +56,4 @@ public class ImageGeneratorView extends VerticalLayout implements BeforeEnterObs
     }
 
 
-    public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        String serviceId = beforeEnterEvent.getRouteParameters().get("serviceId").get();
-
-
-    }
 }
